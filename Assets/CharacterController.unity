@@ -945,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLastPlatformHit: {fileID: 0}
+  myLastPlatformHitCanBeSet: 0
 --- !u!1 &275831911
 GameObject:
   m_ObjectHideFlags: 0
