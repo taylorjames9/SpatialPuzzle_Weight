@@ -18,4 +18,10 @@ public class GateManager : MonoBehaviour {
     GetComponent<Animator>().SetTrigger("Open");
   }
 
+  public void CloseGate()
+  {
+    GetComponent<Animator>().SetTrigger("Close");
+  }
+
+
 }

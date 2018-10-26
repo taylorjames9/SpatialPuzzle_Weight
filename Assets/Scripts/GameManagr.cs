@@ -28,5 +28,16 @@ public class GameManagr : MonoBehaviour {
     return true;
   }
 
+  public bool CheckForFailure(){
+    foreach (GameObject go in allPlatforms)
+    {
+      if (go.GetComponent<Platform>().Unlocked){
+        return false;
+      }
+    }
+    GateManager.Instance.CloseGate();
+    return true;
+  }
+
 
 }

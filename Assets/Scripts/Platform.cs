@@ -75,13 +75,17 @@ public class Platform : MonoBehaviour
       //opposite last
       case 3:
         if (Character.Instance.myLastPlatformHit)
-          Unlocked = !Character.Instance.myLastPlatformHit.GetComponent<Platform>().unlocked;
+        {
+          if(Character.Instance.myLastPlatformHit != gameObject)
+            Unlocked = !Character.Instance.myLastPlatformHit.GetComponent<Platform>().unlocked;
+        }
         break;
       default:
         Debug.Log("NO VALID OPTION");
         break;
     }
     GameManagr.Instance.CheckForSuccess();
+    GameManagr.Instance.CheckForFailure();
   }
 
   public void UpdateMyColor(bool _unlockd)
