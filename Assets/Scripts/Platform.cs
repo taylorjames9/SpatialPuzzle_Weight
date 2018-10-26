@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+//using System.Diagnostics;
 
 public enum MySwitcherRule {None=0, SelfChanger=1, OppositeAll=2, OppositeLast=3}
 
-abstract public class AbstractPlatform : MonoBehaviour
+public class Platform : MonoBehaviour
 {
 
-  public Color offColor;
-  public Color onColor;
 
   private bool unlocked;
   public bool Unlocked{ 
@@ -25,7 +24,9 @@ abstract public class AbstractPlatform : MonoBehaviour
   public MySwitcherRule myRule;
 
   public void Start(){
-    GetComponent<Renderer>().material.color = offColor;
+    int r = UnityEngine.Random.Range(0,2);
+    Debug.Log("r = " + r);
+    Unlocked = r != 0;
   }
 
   public void OnCollisionEnter(Collision collision)
@@ -34,7 +35,11 @@ abstract public class AbstractPlatform : MonoBehaviour
     if (collision.gameObject.GetComponent<Character>())
     {
       ApplyRule();
-      Character.Instance.myLastPlatformHit = gameObject;
+      if (Character.Instance.myLastPlatformHitCanBeSet)
+      {
+        Character.Instance.myLastPlatformHit = gameObject;
+        Character.Instance.myLastPlatformHitCanBeSet = false;
+      }
       Debug.Log("ENTERED" + gameObject.name);
     }
   }
@@ -42,25 +47,30 @@ abstract public class AbstractPlatform : MonoBehaviour
   public void OnCollisionExit(Collision collision)
   {
     if (collision.gameObject.GetComponent<Character>())
+    {
       Debug.Log("EXITED" + gameObject.name);
+      Character.Instance.myLastPlatformHitCanBeSet = true;
+    }
+    
   }
 
 
   public void ApplyRule(){ 
     switch((int)myRule){
+      ///self changer
       case 1:
         Unlocked = !unlocked;
         break;
+        //opposite all
       case 2:
         foreach(GameObject go in GameManagr.Instance.allPlatforms){
-          go.GetComponent<PlatformIndividual>().Unlocked = !unlocked;
+          go.GetComponent<Platform>().Unlocked = !go.GetComponent<Platform>().unlocked;
         }
         break;
+        //opposite last
       case 3:
         if (Character.Instance.myLastPlatformHit)
-          Unlocked = !Character.Instance.myLastPlatformHit.GetComponent<PlatformIndividual>().unlocked;
-        else
-          Unlocked = !unlocked;
+          Unlocked = !Character.Instance.myLastPlatformHit.GetComponent<Platform>().unlocked;
         break;
       default:
         Debug.Log("NO VALID OPTION");
@@ -69,11 +79,11 @@ abstract public class AbstractPlatform : MonoBehaviour
     GameManagr.Instance.CheckForSuccess();
   }
 
-  public void UpdateMyColor(bool lockStatus){
-    if(lockStatus)
-      GetComponent<Renderer>().material.color = onColor;
+  public void UpdateMyColor(bool _unlockd){
+    if(_unlockd)
+      GetComponent<Renderer>().material.color = GameManagr.Instance.colorChart[1];
     else
-      GetComponent<Renderer>().material.color = offColor;
+      GetComponent<Renderer>().material.color = GameManagr.Instance.colorChart[0];
   }
 
 }

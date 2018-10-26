@@ -16,9 +16,11 @@ public class GameManagr : MonoBehaviour {
 
   public List<GameObject> allPlatforms;
 
+  public List<Color> colorChart;
+
   public bool CheckForSuccess(){
     foreach(GameObject go in allPlatforms){
-      if(!go.GetComponent<PlatformIndividual>().Unlocked){
+      if(!go.GetComponent<Platform>().Unlocked){
         return false;
       }
     }

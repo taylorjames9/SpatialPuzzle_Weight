@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 4451144}
   - component: {fileID: 4451147}
   - component: {fileID: 4451146}
-  - component: {fileID: 4451148}
   - component: {fileID: 4451145}
+  - component: {fileID: 4451148}
   m_Layer: 0
   m_Name: (Plat)Opposite_All
   m_TagString: Untagged
@@ -209,11 +209,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4451143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992601fe3226848f8b546078134e5dd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1476e6e8d1d384de6a3440604f12e761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offColor: {r: 1, g: 0, b: 0, a: 1}
-  onColor: {r: 0, g: 0, b: 1, a: 1}
   myRule: 2
 --- !u!1 &48718133
 GameObject:
@@ -578,8 +576,8 @@ GameObject:
   - component: {fileID: 180486741}
   - component: {fileID: 180486744}
   - component: {fileID: 180486743}
-  - component: {fileID: 180486745}
   - component: {fileID: 180486742}
+  - component: {fileID: 180486745}
   m_Layer: 0
   m_Name: (Plat)Self_Changer
   m_TagString: Untagged
@@ -664,11 +662,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 180486740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992601fe3226848f8b546078134e5dd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1476e6e8d1d384de6a3440604f12e761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offColor: {r: 1, g: 0, b: 0, a: 1}
-  onColor: {r: 0, g: 0, b: 1, a: 1}
   myRule: 1
 --- !u!1 &219341459
 GameObject:
@@ -1786,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 263435678}
-  offsetPos: {x: 0, y: 7, z: -10}
+  offsetPos: {x: 0, y: 2, z: -10}
   moveSpeed: 5
   turnSpeed: 10
   smoothSpeed: 0.5
@@ -3277,6 +3273,9 @@ MonoBehaviour:
   - {fileID: 180486740}
   - {fileID: 4451143}
   - {fileID: 1941187820}
+  colorChart:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
 --- !u!4 &1697805617
 Transform:
   m_ObjectHideFlags: 0
@@ -3649,8 +3648,8 @@ GameObject:
   - component: {fileID: 1941187821}
   - component: {fileID: 1941187824}
   - component: {fileID: 1941187823}
-  - component: {fileID: 1941187825}
   - component: {fileID: 1941187822}
+  - component: {fileID: 1941187825}
   m_Layer: 0
   m_Name: (Plat)Opposite_Last
   m_TagString: Untagged
@@ -3735,11 +3734,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1941187820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992601fe3226848f8b546078134e5dd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1476e6e8d1d384de6a3440604f12e761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offColor: {r: 1, g: 0, b: 0, a: 1}
-  onColor: {r: 0, g: 0, b: 1, a: 1}
   myRule: 3
 --- !u!1 &2052681759
 GameObject:
