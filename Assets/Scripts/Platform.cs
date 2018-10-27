@@ -7,8 +7,6 @@ public enum MySwitcherRule { None = 0, SelfChanger = 1, OppositeAll = 2, Opposit
 
 public class Platform : MonoBehaviour
 {
-
-
   private bool unlocked;
   public bool Unlocked
   {
@@ -30,32 +28,6 @@ public class Platform : MonoBehaviour
     Debug.Log("r = " + r);
     Unlocked = r != 0;
   }
-
-  public void OnCollisionEnter(Collision collision)
-  {
-
-    if (collision.gameObject.GetComponent<Character>())
-    {
-      ApplyRule();
-      if (Character.Instance.myLastPlatformHitCanBeSet)
-      {
-        Character.Instance.myLastPlatformHit = gameObject;
-        Character.Instance.myLastPlatformHitCanBeSet = false;
-      }
-      Debug.Log("ENTERED" + gameObject.name);
-    }
-  }
-
-  public void OnCollisionExit(Collision collision)
-  {
-    if (collision.gameObject.GetComponent<Character>())
-    {
-      Debug.Log("EXITED" + gameObject.name);
-      Character.Instance.myLastPlatformHitCanBeSet = true;
-    }
-
-  }
-
 
   public void ApplyRule()
   {

@@ -16,11 +16,14 @@ public class GateManager : MonoBehaviour {
 
   public void OpenGate(){
     GetComponent<Animator>().SetTrigger("Open");
+    Debug.Log("COUNTING NUMBER OF TIMES OPENING GATE");
   }
 
   public void CloseGate()
   {
     GetComponent<Animator>().SetTrigger("Close");
+    Debug.Log("COUNTING NUMBER OF TIMES CLSOING GATE");
+
   }
 
 

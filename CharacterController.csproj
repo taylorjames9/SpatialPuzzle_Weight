@@ -371,6 +371,7 @@
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\GameManagr.cs" />
     <Compile Include="Assets\Scripts\GateManager.cs" />
+    <Compile Include="Assets\Scripts\InvisibleTriggerPlatform.cs" />
     <Compile Include="Assets\Scripts\MarioController.cs" />
     <Compile Include="Assets\Scripts\Platform.cs" />
   </ItemGroup>
