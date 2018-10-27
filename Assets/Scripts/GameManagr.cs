@@ -16,7 +16,8 @@ public class GameManagr : MonoBehaviour {
 
   public List<GameObject> allPlatforms;
 
-  public List<Color> colorChart;
+  //public List<Color> colorChart;
+  public List<Material> matChart;
 
   public bool CheckForSuccess(){
     foreach(GameObject go in allPlatforms){

@@ -63,9 +63,11 @@ public class Platform : MonoBehaviour
   public void UpdateMyColor(bool _unlockd)
   {
     if (_unlockd)
-      GetComponent<Renderer>().material.color = GameManagr.Instance.colorChart[1];
+      //GetComponent<Renderer>().material.color = GameManagr.Instance.colorChart[1];
+      GetComponent<Renderer>().material = GameManagr.Instance.matChart[1];
     else
-      GetComponent<Renderer>().material.color = GameManagr.Instance.colorChart[0];
+      //GetComponent<Renderer>().material.color = GameManagr.Instance.colorChart[0];
+      GetComponent<Renderer>().material = GameManagr.Instance.matChart[0];
   }
 
 }
