@@ -22,6 +22,8 @@ public class Platform : MonoBehaviour
   }
   public MySwitcherRule myRule;
 
+  public Light myLight;
+
   public void Start()
   {
     int r = UnityEngine.Random.Range(0, 2);
